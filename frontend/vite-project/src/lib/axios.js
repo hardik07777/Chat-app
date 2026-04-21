@@ -2,6 +2,6 @@ import axios from "axios";
 
 
 export const axiosInstance = axios.create({
-    baseURL :"http://localhost:5002/api",
-    withCredentials: true, // we can send cookies with each time
+  baseURL: "https://chat-app-2-ocj8.onrender.com/api",
+  withCredentials: true,
 });
