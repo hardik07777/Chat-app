@@ -21,7 +21,7 @@ const __dirname = path.dirname(__filename);
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://chat-app-delta-flame.vercel.app",
+  "https://chat-app-66sw.vercel.app", // ✅ EXACT match needed
 ];
 
 app.use(cors({
