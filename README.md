@@ -1,4 +1,4 @@
-# 🚀 Chat App
+#  Chat App
 
 A real-time chat application built with the **MERN stack** (MongoDB, Express, React, Node.js) and **Socket.IO**, featuring user authentication, chat rooms, and a modern UI.
 
@@ -78,13 +78,6 @@ npm run dev
 
 Open your browser at [http://localhost:5173](http://localhost:5173)
 
----
-
-## 📸 Screenshots
-(You can add images later with markdown like:)
-```
-![Chat UI](./screenshots/chat-ui.png)
-```
 
 ---
 
