@@ -30,8 +30,13 @@ app.use(cors({
 }));
 
 // 🔥 VERY IMPORTANT LINE
-app.options("*", cors());
-app.use(express.json());
+const corsOptions = {
+  origin: allowedOrigins,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // ✅ SAME configapp.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
