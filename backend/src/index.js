@@ -37,6 +37,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions)); // ✅ SAME configapp.use(express.json());
+app.use(express.json()); // ✅ MUST be separate line
+
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
