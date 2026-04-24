@@ -21,22 +21,25 @@ const __dirname = path.dirname(__filename);
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://chat-app-66sw.vercel.app", // ✅ EXACT match needed
+  "https://chat-app-delta-flame.vercel.app", // ✅ correct frontend URL
 ];
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
-}));
-
-// 🔥 VERY IMPORTANT LINE
 const corsOptions = {
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    // allow requests with no origin (like Postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // ✅ SAME configapp.use(express.json());
+app.options("*", cors(corsOptions));
 app.use(express.json()); // ✅ MUST be separate line
 
 app.use(cookieParser());
